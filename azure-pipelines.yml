@@ -7,7 +7,7 @@ pool:
 steps:
 - task: AzurePowerShell@5
   inputs:
-    azureSubscription: 'script-connection'
+    azureSubscription: '4a0f819a-3afb-4efd-af36-0034da0866a2'
     ScriptType: 'FilePath'
     ScriptPath: './Deploy-AzTemplate.ps1'
     ScriptArguments: -Location 'centralus' -ResourceGroupName 'demogroup' -TemplateFile AppServiceARM.json
