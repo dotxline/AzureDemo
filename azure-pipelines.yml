@@ -7,7 +7,7 @@ pool:
 steps:
 - task: AzurePowerShell@5
   inputs:
-    azureSubscription: 'Azure subscription 1'
+    azureSubscription: 'AzureDemoSubscription'
     ScriptType: 'FilePath'
     ScriptPath: './Deploy-AzTemplate.ps1'
     ScriptArguments: -Location 'centralus' -ResourceGroupName 'demogroup' -TemplateFile AppServiceARM.json
