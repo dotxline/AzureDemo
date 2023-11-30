@@ -4,10 +4,19 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-steps:
-- task: AzurePowerShell@5
-  inputs:
-    azureSubscription: 'AzureDemoSubscription'
-    ScriptType: 'FilePath'
-    ScriptPath: './Deploy-AzTemplate2.ps1'
-    azurePowerShellVersion: 'LatestVersion'
+
+stages:
+- stage: Deploy
+  pool: 
+   name: self-hosted
+   demands:
+    - agent.name -equals NQ-PDE
+  jobs:
+  - job: BuildJob
+    steps:
+    - task: AzurePowerShell@5
+      inputs:
+        azureSubscription: 'AzureDemoSubscription'
+        ScriptType: 'FilePath'
+        ScriptPath: './Deploy-AzTemplate2.ps1'
+        azurePowerShellVersion: 'LatestVersion'
