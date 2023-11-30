@@ -9,6 +9,5 @@ steps:
   inputs:
     azureSubscription: 'AzureDemoSubscription'
     ScriptType: 'FilePath'
-    ScriptPath: './Deploy-AzTemplate.ps1'
-    ScriptArguments: -Location 'centralus' -ResourceGroupName 'demogroup' -TemplateFile AppServiceARM.json
+    ScriptPath: './Deploy-AzTemplate2.ps1'
     azurePowerShellVersion: 'LatestVersion'
